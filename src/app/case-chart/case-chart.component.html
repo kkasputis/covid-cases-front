@@ -1,0 +1,12 @@
+<div class="title">Weekly Covid-19 Cases And Deaths Statistics By Country</div>
+<div class="instructions">Please, select country in a drop-down list to see it's Covid-19 statiscs.</div>
+
+
+<div class="selector">
+    <p>Select country</p>
+<select class="form-select" id="country" name="country" (change)="getData($event.target.value)">
+    <option [value]="name" *ngFor="let name of names">{{name}}</option>
+    </select>
+</div> 
+    <google-chart *ngIf="showResult" [type]="chartType" [data]="weeks" [options]="options" #mychart></google-chart>
+    

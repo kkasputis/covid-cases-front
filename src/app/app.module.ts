@@ -1,18 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { CaseChartComponent } from './case-chart/case-chart.component';
+import { Service } from './service/service.service';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({
   declarations: [
-    AppComponent
+    CaseChartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GoogleChartsModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [Service],
+  bootstrap: [CaseChartComponent]
 })
 export class AppModule { }

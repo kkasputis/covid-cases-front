@@ -1,0 +1,23 @@
+.title {
+    text-align: center;
+font-size: xxx-large;
+margin-top: 20px;
+}
+.instructions {
+    text-align: center;
+margin-top: 20px;
+}
+.selector {
+    text-align: center;
+margin-top: 40px;
+}
+select {
+    width: 40%;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	padding: 12px 20px 12px 0px;
+	min-width: 300px;
+	margin-bottom: 5px;
+}
