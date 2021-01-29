@@ -32,7 +32,7 @@ export class CaseChartComponent implements OnInit {
     height: 800
    };
   chartType = 'LineChart';
-  @ViewChild('mychart', {static: false}) mychart: any;
+  @ViewChild('mychart') mychart: any;
 
   constructor(
     private service: Service) { }
