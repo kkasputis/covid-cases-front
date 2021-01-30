@@ -8,5 +8,5 @@
     <option [value]="name" *ngFor="let name of names">{{name}}</option>
     </select>
 </div> 
-    <google-chart *ngIf="showResult" [type]="chartType" [data]="weeks" [options]="options" #mychart></google-chart>
+    <google-chart [type]="chartType" [data]="weeks" [options]="options" #mychart style="width: 100%; margin: auto"></google-chart>
     

@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Service } from '../service/service.service';
-import { Router } from '@angular/router';
-import { NgModule } from '@angular/core';
-import { GoogleChartComponent } from 'angular-google-charts';
 
 @Component({
   selector: 'app-case-chart',
@@ -13,7 +10,6 @@ import { GoogleChartComponent } from 'angular-google-charts';
 export class CaseChartComponent implements OnInit {
   names: Array<any>;
   weeks: any;
-  showResult: boolean = false;
   options = {
     title: 'Weekly Covid-19 Cases And Deaths',
       vAxes: { 
@@ -40,6 +36,7 @@ export class CaseChartComponent implements OnInit {
   ngOnInit() {
     this.service.getCountryList().subscribe(data => {
       this.names = data;
+      this.getData(this.names[0]);
     });
 
   }
@@ -47,7 +44,6 @@ export class CaseChartComponent implements OnInit {
   getData(selected) {
     console.log(selected);
     this.service.getWeekList(selected).subscribe(result => {
-      this.showResult = true;
       this.weeks = result.map(function(item, keys) {
         var mixarray = Object.values(item);
         return mixarray;
